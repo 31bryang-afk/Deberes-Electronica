@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 2 - Arduino Secuencial</title>
+    <link rel="icon" type="image/png" href="microchip_11644769.png">
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --matrix-green: #2ecc71;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3d;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1, h2 { 
+            color: var(--primary-blue); 
+            margin-top: 1.5em;
+        }
+        
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .back-link:hover { text-decoration: underline; }
+
+        /* Contenedor de Código */
+        .code-container {
+            background-color: #000;
+            color: #dcdcdc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 5px solid var(--matrix-green);
+            overflow-x: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .keyword { color: #c678dd; } 
+        .func { color: #61afef; }    
+        .comment { color: #5c6370; font-style: italic; }
+
+        /* Estilo para el botón de simulación */
+        .btn-link {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 30px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px) scale(1.03);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        ul { padding-left: 25px; }
+        li { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="back-link">← Volver al Inicio</a>
+
+    <h1>Práctica 2: Secuencial de LEDs con Arduino</h1>
+
+    <section>
+        <h2>Descripción Técnica</h2>
+        <p>
+            Esta práctica demuestra el control de salidas digitales mediante la placa <strong>Arduino Uno</strong>. 
+            Se implementó un circuito con 6 LEDs conectados a los pines digitales del 1 al 7. El programa utiliza 
+            estructuras de repetición para optimizar el encendido secuencial.
+        </p>
+    </section>
+
+    <section>
+        <h2>El Código Fuente</h2>
+        <div class="code-container">
+<pre>
+<span class="keyword">const int</span> PIN_INICIO = 1;
+<span class="keyword">const int</span> PIN_FIN = 7;
+
+<span class="keyword">void</span> <span class="func">setup</span>() {
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = PIN_INICIO; i <= PIN_FIN; i++) {
+        <span class="func">pinMode</span>(i, OUTPUT); <span class="comment">// Configura pines como salida</span>
+    }
+}
+
+<span class="keyword">void</span> <span class="func">loop</span>() {
+    <span class="comment">// 1. Secuencia Ascendente con FOR</span>
+    <span class="keyword">for</span>(<span class="keyword">int</span> i = PIN_INICIO; i <= PIN_FIN; i++) {
+        secuencialLed(i);
+    }
+
+    <span class="comment">// 2. Secuencia Descendente con WHILE</span>
+    <span class="keyword">int</span> j = PIN_FIN;
+    <span class="keyword">while</span>(j >= PIN_INICIO) {
+        secuencialLed(j);
+        j--;
+    }
+}
+
+<span class="keyword">void</span> secuencialLed(<span class="keyword">int</span> pin) {
+    <span class="func">digitalWrite</span>(pin, HIGH);
+    <span class="func">delay</span>(500);
+    <span class="func">digitalWrite</span>(pin, LOW);
+    <span class="func">delay</span>(500);
+}
+</pre>
+        </div>
+    </section>
+
+    <section>
+        <h2>Análisis de Componentes</h2>
+        <ul>
+            <li><strong>Arduino Uno R3:</strong> El cerebro que procesa y ejecuta el código cargado.</li>
+            <li><strong>Resistencias de 220Ω:</strong> Componentes esenciales para limitar la corriente y proteger los LEDs.</li>
+            <li><strong>Estructura FOR:</strong> Utilizada para iterar de manera eficiente cuando conocemos el rango de pines.</li>
+            <li><strong>Estructura WHILE:</strong> Implementada para manejar el flujo descendente bajo una condición lógica.</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Ver Simulación</h2>
+        <p>Explora el circuito y el código funcionando en tiempo real:</p>
+        <a href="https://www.tinkercad.com/things/6j0ZOcrQXOp-funky-snaget/editel" target="_blank" class="btn-link">
+            Abrir Proyecto en Tinkercad
+        </a>
+    </section>
+
+</body>
+</html>
