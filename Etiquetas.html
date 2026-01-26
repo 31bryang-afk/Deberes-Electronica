@@ -1,14 +1,145 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ETIQUETAS</title>
+    <title>Diccionario de Etiquetas</title>
     <link rel="icon" type="image/x-icon" href="circuit-board_8789799.png">
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3d;
+            --text-color: #e0e0e0;
+            --border-color: #3e3e52;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            line-height: 1.6;
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            border-left: 5px solid var(--primary-blue);
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+
+        /* --- ESTILOS DE LA TABLA --- */
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Esto quita el espacio entre celdas */
+            margin: 20px 0;
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden; /* Para que los bordes redondeados funcionen */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--primary-blue);
+            color: white;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: #34344a; /* Efecto al pasar el mouse */
+        }
+
+        code {
+            background-color: #1a1a27;
+            color: #f1c40f; /* Color resaltado para el código */
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+    </style>
+
+    <link rel="icon" type="image/png" href="microchip_11644769.png">
 </head>
 <body>
-    <p>ETIQUETAS</p>
-    <p>DEFINICION</p>
-    <p>EJEMPLOS</p>
-</body>
+
+    <h2>Diccionario de Etiquetas HTML</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Etiqueta</th>
+                <th>Definición</th>
+                <th>Ejemplo de uso</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td>
+                <td>Define los títulos del documento. El 1 es el más importante.</td>
+                <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;p&gt;</code></td>
+                <td>Define un párrafo de texto.</td>
+                <td><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;a&gt;</code></td>
+                <td>Define un hipervínculo (enlace) a otra página.</td>
+                <td><code>&lt;a href="url"&gt;Enlace&lt;/a&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;ul&gt;</code></td>
+                <td>Define una lista desordenada (con viñetas).</td>
+                <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;strong&gt;</code></td>
+                <td>Define texto importante (resaltado en negrita).</td>
+                <td><code>&lt;strong&gt;Importante&lt;/strong&gt;</code></td>
+            </tr>
+            <tr>
+                <td><code>&lt;img&gt;</code></td>
+                <td>Inserta una imagen en el documento.</td>
+                <td><code>&lt;img src="img.jpg" alt="texto"&gt;</code></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Importancia de las Etiquetas HTML</h2>
+    <ul>
+        <li>Las etiquetas HTML estructuran el contenido, facilitando su lectura.</li>
+        <li>Permiten a los navegadores interpretar correctamente el contenido.</li>
+        <li>Mejoran la accesibilidad y el SEO del sitio web.</li>
+    </ul>
+
+    <h2>Conclusión</h2>
+    <ul>
+        <li>El uso adecuado de etiquetas es esencial para sitios efectivos.</li>
+        <li>Comprender su función ayuda a diseñar webs más eficientes.</li>
+    </ul> </body>
 </html>

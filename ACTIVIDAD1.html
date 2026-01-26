@@ -1,18 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Actividad 1</title>
-    <link rel="icon" type="image/x-icon" href="circuit-board_8789799.png">
+    <title>Actividad 1 - Electrónica</title>
+    
+    <link rel="icon" type="image/png" href="microchip_11644769.png">
+
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3d;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--primary-blue);
+            border-bottom: 2px solid var(--primary-blue);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        h2 {
+            background-color: var(--card-bg);
+            padding: 10px 15px;
+            border-left: 5px solid var(--primary-blue);
+            border-radius: 4px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        ul {
+            list-style-type: square;
+            padding-left: 40px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            background-color: var(--primary-blue);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .btn-link:hover {
+            background-color: #2980b9;
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
-    <h1>Simulacion de compuertas logicas</h1>
-    <p>Objetivos</p>
-    <h2>Descripcion de la Actividad</h2>
+
+    <h1>Simulación de Compuertas Lógicas</h1>
+
+    <h2>Objetivos</h2>
+    <ul>
+        <li>Comprender el funcionamiento lógico de las compuertas <strong>AND, OR, NOT</strong>.</li>
+        <li>Validar las tablas de verdad mediante una simulación interactiva.</li>
+    </ul>
+
+    <h2>Descripción de la Actividad</h2>
+    <p>
+        En esta práctica, se diseñó un circuito digital en la plataforma <strong>Tinkercad</strong>. 
+        El ejercicio consiste en conectar diferentes interruptores (inputs) a las entradas de las compuertas 
+        para observar el comportamiento de una salida LED (output), verificando así el flujo lógico de la señal.
+    </p>
+
     <h2>Materiales</h2>
+    <ul>
+        <li><strong>Fuentes de energía:</strong> Baterías de 9V y baterías de moneda de 3V.</li>
+        <li><strong>Circuitos Integrados:</strong> 74HC08 (AND), 74HC32 (OR) y 74HC04 (NOT).</li>
+        <li><strong>Componentes pasivos:</strong> Resistencias de 1kΩ y 330Ω, y diodos LED.</li>
+    </ul>
+
     <h2>Conclusiones</h2>
-    <h2>Ver Simulacion</h2>
-    <a href="https://www.tinkercad.com/things/jQlCXdlJWSZ/editel?returnTo=%2Fdashboard">Ver Actividad</a>
+    <ul>
+        <li>Se logró comprobar que las simulaciones digitales son herramientas precisas para el diseño previo al montaje físico.</li>
+        <li>Se confirmó que el estado lógico de las salidas corresponde estrictamente a las tablas de verdad teóricas.</li>
+        <li>La correcta polarización de los circuitos integrados es fundamental para evitar errores en la simulación.</li>
+    </ul>
+
+    <h2>Ver Simulación</h2>
+    <p>Puedes acceder al diseño interactivo haciendo clic en el siguiente enlace:</p>
+    
+    <a href="https://www.tinkercad.com/things/jQlCXdlJWSZ/editel?returnTo=%2Fdashboard" target="_blank" class="btn-link">
+        Abrir Proyecto en Tinkercad
+    </a>
+
 </body>
 </html>
