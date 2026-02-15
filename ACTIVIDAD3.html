@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad 3 - Arduino LED</title>
+    <link rel="icon" type="image/png" href="microchip_11644769.ico">
+    
+    <style>
+        :root {
+            --primary-blue: #3498db;
+            --dark-bg: #1e1e2e;
+            --card-bg: #2a2a3d;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        h1 {
+            color: var(--primary-blue);
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary-blue);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--primary-blue);
+            margin-top: 0;
+        }
+
+        .btn-nav {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            filter: brightness(1.1);
+        }
+
+        code {
+            background-color: #1a1a1a;
+            padding: 15px;
+            display: block;
+            border-radius: 5px;
+            color: #f8f8f2;
+            overflow-x: auto;
+            font-family: 'Consolas', monospace;
+        }
+
+        .volver {
+            background-color: #4a4a4a;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Práctica 3: Arduino Encender LED</h1>
+
+    <div class="card">
+        <h2>Descripción de la Actividad</h2>
+        <p>En esta práctica se realizó la programación de una placa <strong>Arduino Uno</strong> para controlar el parpadeo (blink) de un LED conectado al pin digital 13. El objetivo es entender la estructura básica de un sketch de Arduino: <code>setup()</code> y <code>loop()</code>.</p>
+    </div>
+
+    <div class="card">
+        <h2>Simulación en Tiempo Real</h2>
+        <p>Haz clic en el botón de abajo para interactuar con el circuito y el código directamente en la plataforma Tinkercad.</p>
+        
+        <a href="https://www.tinkercad.com/things/6j0ZOcrQXOp-arduino-encender-led" target="_blank" class="btn-nav">
+           🚀 Abrir Simulación en Tinkercad
+        </a>
+    </div>
+
+    <div class="card">
+        <h2>Código de Programación</h2>
+        <pre><code>
+// Práctica 3: Blink LED
+void setup() {
+  pinMode(13, OUTPUT); // Configuramos el pin 13 como salida
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // Encendemos el LED
+  delay(1000);            // Esperamos 1 segundo
+  digitalWrite(13, LOW);  // Apagamos el LED
+  delay(1000);            // Esperamos 1 segundo
+}
+        </code></pre>
+    </div>
+
+    <div style="text-align: center;">
+        <a href="index.html" class="btn-nav volver">⬅ Volver al Menú Principal</a>
+    </div>
+
+</body>
+</html>
