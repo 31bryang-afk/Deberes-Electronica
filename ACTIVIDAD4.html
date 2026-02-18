@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>PRACTICA 4: SENSOR DE DISTANCIA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* FONDO GENERAL */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f172a, #1e293b);
+            color: #f1f5f9;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        /* TITULO PRINCIPAL */
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+            color: #38bdf8;
+            letter-spacing: 1px;
+        }
+
+        /* TARJETAS */
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 20px auto;
+            max-width: 850px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h2 {
+            margin-bottom: 15px;
+            color: #60a5fa;
+        }
+
+        /* LISTA */
+        .lista-tech {
+            list-style: none;
+        }
+
+        .lista-tech li {
+            margin-bottom: 12px;
+            padding-left: 15px;
+            position: relative;
+        }
+
+        .lista-tech li::before {
+            content: "•";
+            color: #38bdf8;
+            position: absolute;
+            left: 0;
+        }
+
+        /* CODIGO */
+        pre {
+            background: #0f172a;
+            padding: 15px;
+            border-radius: 10px;
+            overflow-x: auto;
+            border: 1px solid #334155;
+        }
+
+        code {
+            color: #22d3ee;
+            font-family: Consolas, monospace;
+            font-size: 0.9rem;
+        }
+
+        /* BOTONES */
+        .btn-nav {
+            display: inline-block;
+            padding: 12px 22px;
+            margin-top: 15px;
+            background: linear-gradient(90deg, #38bdf8, #0ea5e9);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .btn-nav:hover {
+            background: linear-gradient(90deg, #0ea5e9, #0284c7);
+            transform: scale(1.05);
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>PRÁCTICA 4: ARDUINO SENSOR DE DISTANCIA</h1>
+    
+    <div class="card">
+        <h2>Descripción de la Actividad</h2>
+        <p>
+            En esta práctica se realizó la programación de una placa <strong>Arduino Uno</strong> para controlar un sensor ultrasónico <strong>HC-SR04</strong>. 
+            El objetivo es medir la distancia: si es mayor a 100 cm se enciende un LED, y si es menor, se activa una alarma sonora (buzzer).
+        </p>
+    </div>
+
+    <div class="card">
+        <h2>Análisis de Componentes</h2>
+        <ul class="lista-tech">
+            <li><strong>Arduino Uno R3:</strong> El cerebro que procesa y ejecuta las instrucciones.</li>
+            <li><strong>Sensor Ultrasónico HC-SR04:</strong> Mide la distancia enviando ondas de sonido.</li>
+            <li><strong>Resistencias de 220Ω:</strong> Protegen el LED.</li>
+            <li><strong>Buzzer (Piezo):</strong> Emite sonido de alerta.</li>
+            <li><strong>LED:</strong> Indicador visual de estado seguro.</li>
+        </ul>
+    </div>
+
+    <div class="card">
+        <h2>Código de Arduino</h2>
+        <pre><code>
+long duracion;
+int distancia;
+
+void setup() {
+  pinMode(13, OUTPUT);
+  pinMode(10, OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  distancia = (duracion / 2) / 29;
+
+  if (distancia > 100) {
+    digitalWrite(13, HIGH);
+    digitalWrite(10, LOW);
+  } else {
+    digitalWrite(13, LOW);
+    digitalWrite(10, HIGH);
+  }
+}
+        </code></pre>
+    </div>
+
+    <div class="card center">
+        <h2>Simulación en Tiempo Real</h2>
+        <p>Haz clic en el botón para interactuar con el circuito:</p>
+        <a href="https://www.tinkercad.com/things/8jTcxZi324C-ldc-sensor-de-distancia" target="_blank" class="btn-nav">
+            ABRIR PROYECTO EN TINKERCAD
+        </a>
+    </div>
+
+    <div class="footer">
+        <a href="index.html" class="btn-nav">Volver al Inicio</a>
+    </div>
+
+</body>
+</html>
