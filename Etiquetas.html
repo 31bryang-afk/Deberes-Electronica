@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diccionario de Etiquetas</title>
-    <link rel="icon" type="image/x-icon" href="circuit-board_8789799.png">
+    <title>Diccionario de Etiquetas HTML Extendido</title>
+    <link rel="icon" type="image/png" href="microchip_11644769.png">    
     <style>
         :root {
             --primary-blue: #3498db;
@@ -12,14 +12,15 @@
             --card-bg: #2a2a3d;
             --text-color: #e0e0e0;
             --border-color: #3e3e52;
+            --code-yellow: #f1c40f;
         }
 
         body {
-            font-family: 'Segoe UI', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: var(--dark-bg);
             color: var(--text-color);
             line-height: 1.6;
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 40px auto;
             padding: 20px;
         }
@@ -28,18 +29,21 @@
             color: var(--primary-blue);
             border-left: 5px solid var(--primary-blue);
             padding-left: 15px;
-            margin-top: 30px;
+            margin-top: 40px;
+            margin-bottom: 20px;
         }
 
         /* --- ESTILOS DE LA TABLA --- */
+        .table-container {
+            overflow-x: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
         table {
             width: 100%;
-            border-collapse: collapse; /* Esto quita el espacio entre celdas */
-            margin: 20px 0;
+            border-collapse: collapse;
             background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden; /* Para que los bordes redondeados funcionen */
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
         }
 
         th, td {
@@ -54,6 +58,8 @@
             text-transform: uppercase;
             font-size: 0.85rem;
             letter-spacing: 1px;
+            position: sticky;
+            top: 0; /* Mantiene el encabezado visible al hacer scroll */
         }
 
         tr:last-child td {
@@ -61,15 +67,24 @@
         }
 
         tr:hover {
-            background-color: #34344a; /* Efecto al pasar el mouse */
+            background-color: #34344a;
         }
 
         code {
             background-color: #1a1a27;
-            color: #f1c40f; /* Color resaltado para el código */
+            color: var(--code-yellow);
             padding: 4px 8px;
             border-radius: 4px;
             font-family: 'Consolas', monospace;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* Categorías en la tabla */
+        .category-row {
+            background-color: #232334;
+            font-weight: bold;
+            color: var(--primary-blue);
             font-size: 0.9rem;
         }
 
@@ -81,65 +96,116 @@
             margin-bottom: 10px;
         }
     </style>
-
-    <link rel="icon" type="image/png" href="microchip_11644769.png">    
 </head>
 <body>
 
-    <h2>Diccionario de Etiquetas HTML</h2>
+    <h2>Diccionario de Etiquetas HTML5</h2>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Etiqueta</th>
-                <th>Definición</th>
-                <th>Ejemplo de uso</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td>
-                <td>Define los títulos del documento. El 1 es el más importante.</td>
-                <td><code>&lt;h1&gt;Título Principal&lt;/h1&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>&lt;p&gt;</code></td>
-                <td>Define un párrafo de texto.</td>
-                <td><code>&lt;p&gt;Este es un párrafo.&lt;/p&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>&lt;a&gt;</code></td>
-                <td>Define un hipervínculo (enlace) a otra página.</td>
-                <td><code>&lt;a href="url"&gt;Enlace&lt;/a&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>&lt;ul&gt;</code></td>
-                <td>Define una lista desordenada (con viñetas).</td>
-                <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>&lt;strong&gt;</code></td>
-                <td>Define texto importante (resaltado en negrita).</td>
-                <td><code>&lt;strong&gt;Importante&lt;/strong&gt;</code></td>
-            </tr>
-            <tr>
-                <td><code>&lt;img&gt;</code></td>
-                <td>Inserta una imagen en el documento.</td>
-                <td><code>&lt;img src="img.jpg" alt="texto"&gt;</code></td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Etiqueta</th>
+                    <th>Definición</th>
+                    <th>Ejemplo de uso</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category-row"><td colspan="3">Contenido Básico</td></tr>
+                <tr>
+                    <td><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></td>
+                    <td>Títulos del documento (H1 es el principal).</td>
+                    <td><code>&lt;h1&gt;Título&lt;/h1&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;p&gt;</code></td>
+                    <td>Define un párrafo de texto.</td>
+                    <td><code>&lt;p&gt;Hola mundo&lt;/p&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;a&gt;</code></td>
+                    <td>Crea un enlace a otra web o archivo.</td>
+                    <td><code>&lt;a href="url"&gt;Link&lt;/a&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;img&gt;</code></td>
+                    <td>Muestra una imagen (requiere src y alt).</td>
+                    <td><code>&lt;img src="f.jpg" alt="des"&gt;</code></td>
+                </tr>
+
+                <tr class="category-row"><td colspan="3">Estructura Semántica (Layout)</td></tr>
+                <tr>
+                    <td><code>&lt;header&gt;</code></td>
+                    <td>Encabezado de la página o de una sección.</td>
+                    <td><code>&lt;header&gt;...&lt;/header&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;nav&gt;</code></td>
+                    <td>Contenedor de enlaces de navegación (menús).</td>
+                    <td><code>&lt;nav&gt;...&lt;/nav&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;main&gt;</code></td>
+                    <td>Contenido principal y único del documento.</td>
+                    <td><code>&lt;main&gt;...&lt;/main&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;footer&gt;</code></td>
+                    <td>Pie de página (créditos, contacto).</td>
+                    <td><code>&lt;footer&gt;...&lt;/footer&gt;</code></td>
+                </tr>
+
+                <tr class="category-row"><td colspan="3">Listas y Contenedores</td></tr>
+                <tr>
+                    <td><code>&lt;ul&gt;</code> / <code>&lt;ol&gt;</code></td>
+                    <td>Lista desordenada (puntos) u ordenada (números).</td>
+                    <td><code>&lt;ul&gt;&lt;li&gt;Item&lt;/li&gt;&lt;/ul&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;div&gt;</code></td>
+                    <td>Contenedor de bloque genérico para diseño.</td>
+                    <td><code>&lt;div&gt;...&lt;/div&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;span&gt;</code></td>
+                    <td>Contenedor en línea para fragmentos de texto.</td>
+                    <td><code>&lt;span&gt;Texto&lt;/span&gt;</code></td>
+                </tr>
+
+                <tr class="category-row"><td colspan="3">Formularios e Interacción</td></tr>
+                <tr>
+                    <td><code>&lt;form&gt;</code></td>
+                    <td>Área que contiene elementos de entrada de datos.</td>
+                    <td><code>&lt;form&gt;...&lt;/form&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;input&gt;</code></td>
+                    <td>Campo de entrada (texto, email, password, etc).</td>
+                    <td><code>&lt;input type="text"&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><code>&lt;button&gt;</code></td>
+                    <td>Botón clickeable para ejecutar acciones.</td>
+                    <td><code>&lt;button&gt;Enviar&lt;/button&gt;</code></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    
 
     <h2>Importancia de las Etiquetas HTML</h2>
     <ul>
-        <li>Las etiquetas HTML estructuran el contenido, facilitando su lectura.</li>
-        <li>Permiten a los navegadores interpretar correctamente el contenido.</li>
-        <li>Mejoran la accesibilidad y el SEO del sitio web.</li>
+        <li><strong>Semántica:</strong> Ayudan a los buscadores (Google) a entender qué partes son importantes.</li>
+        <li><strong>Accesibilidad:</strong> Permiten que lectores de pantalla para personas con discapacidad funcionen bien.</li>
+        <li><strong>Organización:</strong> Facilitan el mantenimiento del código a largo plazo.</li>
     </ul>
 
     <h2>Conclusión</h2>
     <ul>
-        <li>El uso adecuado de etiquetas es esencial para sitios efectivos.</li>
-        <li>Comprender su función ayuda a diseñar webs más eficientes.</li>
-    </ul> </body>
+        <li>El dominio de estas etiquetas es el primer paso para ser un desarrollador Web Pro.</li>
+        <li>Combinar etiquetas semánticas con CSS permite crear sitios modernos y rápidos.</li>
+    </ul>
+
+</body>
 </html>
