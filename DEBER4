@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deber 4 - Electrónica</title>
+    <style>
+        /* Paleta de colores basada en tu ejemplo */
+        :root {
+            --bg-principal: #1a1f2b; /* Azul oscuro de fondo */
+            --bg-card: #242b3d;      /* Fondo de las secciones */
+            --azul-claro: #4a90e2;   /* Celeste de los títulos */
+            --texto-principal: #ffffff;
+            --texto-secundario: #b0b8c4;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            color: var(--azul-claro);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--azul-claro);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            background-color: var(--bg-card);
+            color: var(--texto-principal);
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            border-left: 5px solid var(--azul-claro);
+            margin-top: 30px;
+        }
+
+        .content-box {
+            padding: 10px 25px;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            color: var(--texto-secundario);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: "■ ";
+            color: var(--azul-claro);
+            margin-right: 10px;
+        }
+
+        /* Estilo de la Tabla */
+        .table-container {
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        th {
+            background-color: var(--azul-claro);
+            color: white;
+            padding: 15px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #343d52;
+            text-align: center;
+            color: var(--texto-secundario);
+        }
+
+        tr:hover {
+            background-color: #2d364d;
+        }
+
+        .highlight {
+            color: var(--azul-claro);
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Deber 4: Conversión entre Bases Numéricas</h1>
+
+    <h2>Objetivos</h2>
+    <div class="content-box">
+        <ul>
+            <li>Comprender la estructura lógica de los sistemas Binario, Octal, Decimal y Hexadecimal.</li>
+            <li>Realizar conversiones precisas entre diferentes bases para su aplicación en sistemas digitales.</li>
+            <li>Dominar el uso de algoritmos de conversión manual y su verificación.</li>
+        </ul>
+    </div>
+
+    <h2>Definición</h2>
+    <div class="content-box">
+        <p>
+            En electrónica y sistemas computacionales, un sistema de numeración es un conjunto de símbolos utilizados para representar cantidades. 
+            La <strong>base</strong> indica el número de símbolos únicos (bits en binario, dígitos en decimal, etc.) que el sistema utiliza para representar valores mediante notación posicional.
+        </p>
+    </div>
+
+    <h2>Tabla de Resultados</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Base Origen</th>
+                    <th>Valor</th>
+                    <th>Binario</th>
+                    <th>Decimal</th>
+                    <th>Octal</th>
+                    <th>Hexadecimal</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Binario</td><td class="highlight">10101</td><td>10101</td><td>21</td><td>25</td><td>15</td></tr>
+                <tr><td>2</td><td>Binario</td><td class="highlight">111100</td><td>111100</td><td>60</td><td>74</td><td>3C</td></tr>
+                <tr><td>3</td><td>Binario</td><td class="highlight">1011011</td><td>1011011</td><td>91</td><td>133</td><td>5B</td></tr>
+                <tr><td>4</td><td>Binario</td><td class="highlight">11011101</td><td>11011101</td><td>221</td><td>335</td><td>DD</td></tr>
+                <tr><td>5</td><td>Binario</td><td class="highlight">10101010</td><td>10101010</td><td>170</td><td>252</td><td>AA</td></tr>
+                <tr><td>6</td><td>Decimal</td><td class="highlight">25</td><td>11001</td><td>25</td><td>31</td><td>19</td></tr>
+                <tr><td>7</td><td>Decimal</td><td class="highlight">84</td><td>1010100</td><td>84</td><td>124</td><td>54</td></tr>
+                <tr><td>8</td><td>Decimal</td><td class="highlight">127</td><td>1111111</td><td>127</td><td>177</td><td>7F</td></tr>
+                <tr><td>9</td><td>Decimal</td><td class="highlight">256</td><td>100000000</td><td>256</td><td>400</td><td>100</td></tr>
+                <tr><td>10</td><td>Decimal</td><td class="highlight">512</td><td>1000000000</td><td>512</td><td>1000</td><td>200</td></tr>
+                <tr><td>11</td><td>Octal</td><td class="highlight">17</td><td>1111</td><td>15</td><td>17</td><td>F</td></tr>
+                <tr><td>12</td><td>Octal</td><td class="highlight">52</td><td>101010</td><td>42</td><td>52</td><td>2A</td></tr>
+                <tr><td>13</td><td>Octal</td><td class="highlight">144</td><td>1100100</td><td>100</td><td>144</td><td>64</td></tr>
+                <tr><td>14</td><td>Octal</td><td class="highlight">375</td><td>11111101</td><td>253</td><td>375</td><td>FD</td></tr>
+                <tr><td>15</td><td>Octal</td><td class="highlight">777</td><td>111111111</td><td>511</td><td>777</td><td>1FF</td></tr>
+                <tr><td>16</td><td>Hex</td><td class="highlight">A1</td><td>10100001</td><td>161</td><td>241</td><td>A1</td></tr>
+                <tr><td>17</td><td>Hex</td><td class="highlight">3F</td><td>111111</td><td>63</td><td>77</td><td>3F</td></tr>
+                <tr><td>18</td><td>Hex</td><td class="highlight">C9</td><td>11001001</td><td>201</td><td>311</td><td>C9</td></tr>
+                <tr><td>19</td><td>Hex</td><td class="highlight">1B2</td><td>110110010</td><td>434</td><td>662</td><td>1B2</td></tr>
+                <tr><td>20</td><td>Hex</td><td class="highlight">FF</td><td>11111111</td><td>255</td><td>377</td><td>FF</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
