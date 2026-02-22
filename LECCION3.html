@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lección 3 - Sistema de Contraseña</title>
+    <style>
+        :root {
+            --bg-principal: #1a1f2b;
+            --bg-card: #242b3d;
+            --azul-claro: #4a90e2;
+            --texto-principal: #ffffff;
+            --texto-secundario: #b0b8c4;
+            --verde-tinker: #00d084;
+        }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: var(--bg-principal);
+            color: var(--texto-principal);
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        h1 {
+            color: var(--azul-claro);
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border-bottom: 2px solid var(--azul-claro);
+            padding-bottom: 15px;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            background-color: var(--bg-card);
+            color: var(--texto-principal);
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            border-left: 5px solid var(--azul-claro);
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .content-box {
+            padding: 5px 25px;
+            margin-bottom: 20px;
+        }
+
+        p, li {
+            color: var(--texto-secundario);
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li::before {
+            content: "■ ";
+            color: var(--azul-claro);
+            margin-right: 10px;
+        }
+
+        /* Estilo del Botón de Tinkercad */
+        .link-container {
+            text-align: center;
+            margin: 40px 0;
+            padding: 20px;
+            background-color: var(--bg-card);
+            border-radius: 8px;
+        }
+
+        .btn-tinkercad {
+            display: inline-block;
+            background-color: var(--azul-claro);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .btn-tinkercad:hover {
+            background-color: #357abd;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(74, 144, 226, 0.4);
+        }
+
+        strong {
+            color: var(--texto-principal);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Lección 3: Sistema de Contraseña con Teclado y LCD</h1>
+
+    <h2>Objetivos</h2>
+    <div class="content-box">
+        <ul>
+            <li>Implementar un sistema de seguridad digital utilizando una placa Arduino Uno.</li>
+            <li>Gestionar la entrada de datos mediante un teclado matricial (Keypad 4x4).</li>
+            <li>Visualizar estados de validación en tiempo real a través de una pantalla LCD 16x2.</li>
+            <li>Configurar una alerta sonora mediante un buzzer para intentos fallidos.</li>
+        </ul>
+    </div>
+
+    <h2>Definición del Proyecto</h2>
+    <div class="content-box">
+        <p>
+            Esta práctica consiste en la creación de un <strong>control de acceso electrónico</strong>. El usuario debe ingresar una secuencia numérica predefinida. El sistema procesa la entrada y compara los caracteres; si coinciden, se otorga acceso visual. En caso contrario, el sistema activa una <strong>alarma sonora</strong>, demostrando la integración de periféricos de entrada, procesamiento y salida.
+        </p>
+    </div>
+
+    <h2>Simulación Interactiva</h2>
+    <div class="link-container">
+        <p>Enlace del circuito:</p>
+        <a href="https://www.tinkercad.com/things/8V9YMv9fO4E-sistema-de-contrasena" target="_blank" class="btn-tinkercad">
+            Ver Simulación en Tinkercad
+        </a>
+    </div>
+
+    <h2>Materiales Utilizados</h2>
+    <div class="content-box">
+        <ul>
+            <li><strong>Microcontrolador:</strong> Arduino Uno R3.</li>
+            <li><strong>Entrada:</strong> Teclado Matricial 4x4 (Keypad).</li>
+            <li><strong>Salida Visual:</strong> Pantalla LCD 16x2.</li>
+            <li><strong>Salida Sonora:</strong> Buzzer piezoeléctrico (Alarma).</li>
+            <li><strong>Componentes:</strong> Resistencia de 220Ω, potenciómetro y cables.</li>
+        </ul>
+    </div>
+
+    <h2>Conclusiones</h2>
+    <div class="content-box">
+        <ul>
+            <li>Se logró la lectura correcta de una matriz de teclas mediante la programación de filas y columnas.</li>
+            <li>La interfaz LCD proporciona una respuesta inmediata al usuario, mejorando la experiencia de uso.</li>
+            <li>Se validó que el sistema bloquea el acceso de manera efectiva activando el buzzer ante claves incorrectas.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
