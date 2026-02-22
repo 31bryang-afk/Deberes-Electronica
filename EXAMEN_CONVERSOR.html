@@ -2,70 +2,75 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Documentación - Conversor de Sistemas</title>
+    <title>Documentación Técnica - Conversor Pro</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background-color: #1e1e2e; color: #e0e0e0; padding: 40px; }
-        .container { max-width: 850px; margin: auto; background: #2a2a3d; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        h1 { color: #3498db; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .componente { background: #34495e; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #3498db; }
-        pre { background: #111; color: #57ff57; padding: 20px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem; }
-        .btn-back { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
-        .material-item { background: #34495e; padding: 10px; margin: 5px 0; border-radius: 5px; list-style: none; border-left: 3px solid #3498db; }
-        table { width:100%; border-collapse: collapse; margin: 20px 0; background: #34495e; border-radius: 8px; overflow: hidden; }
-        th { background: #3498db; color: white; padding: 12px; text-align: left; }
-        td { padding: 12px; border-bottom: 1px solid #2a2a3d; }
-        .sistema-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
-        .sistema-card { background: #242435; padding: 10px; border-radius: 5px; border: 1px solid #3498db; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #1e1e2e; color: #e0e0e0; padding: 40px; line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; background: #2a2a3d; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #3498db; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; text-transform: uppercase; }
+        h2 { color: #2ecc71; margin-top: 30px; border-left: 5px solid #2ecc71; padding-left: 15px; }
+        h3 { color: #f1c40f; }
+        .concept-card { background: #34495e; padding: 20px; border-radius: 8px; margin: 15px 0; border-top: 3px solid #3498db; }
+        code { background: #111; color: #ff79c6; padding: 2px 6px; border-radius: 4px; font-family: 'Courier New', Courier, monospace; }
+        pre { background: #111; color: #50fa7b; padding: 20px; border-radius: 10px; overflow-x: auto; border: 1px solid #444; }
+        .step { font-weight: bold; color: #3498db; font-size: 1.2rem; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; border: 1px solid #444; text-align: left; }
+        th { background: #3498db; color: white; }
+        .btn-back { display: inline-block; margin-top: 30px; color: #3498db; text-decoration: none; font-weight: bold; border: 2px solid #3498db; padding: 10px 20px; border-radius: 5px; transition: 0.3s; }
+        .btn-back:hover { background: #3498db; color: white; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h1>Examen Teórico: Documentación del Conversor</h1>
+    <h1>Documentación: Conversor de Sistemas Numéricos</h1>
 
-    <h3>1. Descripción General</h3>
-    <p>Este programa en Python permite al usuario convertir números entre los sistemas Binario, Octal, Decimal y Hexadecimal mediante un menú interactivo de selección (1-4).</p>
+    <section>
+        <h2>1. Introducción al Proyecto</h2>
+        <p>Esta aplicación web/desktop desarrollada en <b>Python</b> permite la conversión de valores entre cuatro sistemas fundamentales en electrónica y computación: <b>Binario, Octal, Decimal y Hexadecimal</b>. La lógica se basa en un "algoritmo de puente", donde cualquier entrada se normaliza a base 10 antes de ser transformada al destino final.</p>
+    </section>
 
-    <h3>2. Sistemas Numéricos Incluidos</h3>
-    <div class="sistema-info">
-        <div class="sistema-card">
-            <strong>🔢 Decimal (Base 10):</strong> El sistema estándar que usamos a diario (0-9).
+    <section>
+        <h2>2. Conceptos Fundamentales de Programación</h2>
+        <p>Para desarrollar este software, se aplicaron los siguientes pilares de la programación:</p>
+        
+        <div class="concept-card">
+            <h3>🔹 Variables</h3>
+            <p>Son espacios de memoria que almacenan datos. En este proyecto, <code>numero</code> guarda la entrada del usuario, y <code>base_actual</code> almacena el sistema de origen. Usamos variables de tipo <b>String</b> (texto) y <b>Integer</b> (enteros).</p>
         </div>
-        <div class="sistema-card">
-            <strong>🤖 Binario (Base 2):</strong> El lenguaje de las computadoras, usa solo 0 y 1.
+
+        <div class="concept-card">
+            <h3>🔹 Funciones</h3>
+            <p>Bloques de código reutilizables. Definimos <code>ejecutar_conversor()</code> para encapsular toda la lógica. Esto permite que el programa sea modular y organizado.</p>
         </div>
-        <div class="sistema-card">
-            <strong>🐙 Octal (Base 8):</strong> Sistema que utiliza ocho dígitos (0-7).
+
+        <div class="concept-card">
+            <h3>🔹 Condicionales (Estructuras de Decisión)</h3>
+            <p>Utilizamos <code>if</code>, <code>elif</code> y <code>else</code> para que el programa "decida" qué conversión realizar basándose en la elección del usuario.</p>
         </div>
-        <div class="sistema-card">
-            <strong>💎 Hexadecimal (Base 16):</strong> Usa dígitos del 0-9 y letras de la A-F.
+
+        <div class="concept-card">
+            <h3>🔹 Manejo de Excepciones (Try/Except)</h3>
+            <p>Es una técnica de seguridad para evitar que el programa se cierre por errores. Si el usuario ingresa una letra en un sistema binario, el bloque <code>except</code> captura el error y lanza un mensaje preventivo.</p>
         </div>
-    </div>
+    </section>
 
     
 
-    <h3>3. Objetivos del Proyecto</h3>
-    <ul>
-        <li class="material-item">🎯 <b>Objetivo General:</b> Automatizar la conversión entre bases numéricas.</li>
-        <li class="material-item">🧠 <b>Objetivo Técnico:</b> Implementar lógica de programación y manejo de errores.</li>
-    </ul>
+    <section>
+        <h2>3. Desarrollo Paso a Paso</h2>
+        
+        <p><span class="step">Paso 1:</span> Definición de la interfaz de consola y captura de datos con <code>input()</code>.</p>
+        <p><span class="step">Paso 2:</span> Creación de un <b>Diccionario</b> para mapear las opciones del menú con las bases reales (2, 8, 10, 16).</p>
+        <p><span class="step">Paso 3:</span> Uso de la función <code>int(numero, base_actual)</code>. Este es el motor que convierte el texto en un valor numérico decimal procesable por la CPU.</p>
+        <p><span class="step">Paso 4:</span> Aplicación de rebanado de cadenas (<i>Slicing</i>) con <code>[2:]</code> para eliminar los prefijos técnicos de Python como <code>0b</code> o <code>0x</code>.</p>
+    </section>
 
-    <h3>4. Lista de Materiales</h3>
-    <table>
-        <tr><th>Herramienta</th><th>Uso</th></tr>
-        <tr><td>🐍 Python 3.x</td><td>Lógica y ejecución del algoritmo.</td></tr>
-        <tr><td>💻 VS Code</td><td>Desarrollo del código fuente.</td></tr>
-    </table>
-
-    <h3>5. Descripción de Componentes Técnicos</h3>
-    <div class="componente">
-        <strong>Funciones de Conversión:</strong> Se utilizaron <code>bin()</code>, <code>oct()</code> y <code>hex()</code> para transformar los datos procesados.
-    </div>
-
-    <h3>6. Código Fuente</h3>
-    <pre>
-    
-    print("--- 🧮 BIENVENIDO AL CONVERSOR AMIGABLE ---")
+    <section>
+        <h2>4. Código Fuente Completo</h2>
+        <pre>
+    def ejecutar_conversor():
+    print("- BIENVENIDO -")
     # primero colocamos esto en la terminal = python conversor.py
     
     # 1. Pedir el número primero
@@ -93,7 +98,7 @@
     base_deseada = bases.get(opcion_destino)
 
     if not base_actual or not base_deseada:
-        print("❌ Opción no válida.")
+        print("Opción no válida.")
         return
 
     try:
@@ -114,11 +119,15 @@
     except ValueError:
         print("\n❌ Error: El número no coincide con el sistema de origen seleccionado.")
 
-ejecutar_conversor()
-    </pre>
+    ejecutar_conversor()
+        </pre>
+    </section>
 
-    <h3>7. Evidencia de Funcionamiento</h3>
-    <img src="evidencia_examen.png" alt="Captura de terminal" style="width:100%; border-radius:10px; margin-top: 10px;">
+    <section>
+        <h2>5. Captura de Pantalla.</h2>
+        <p>Captura de pantalla del programa funcionando con éxito:</p>
+        <img src="evidencia_examen.png" alt="Captura de terminal" style="width:100%; border: 2px solid #3498db; border-radius: 8px;">
+    </section>
 
     <a href="index.html" class="btn-back">← Volver al Portafolio</a>
 </div>
