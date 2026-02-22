@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentación - Conversor de Sistemas</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #1e1e2e; color: #e0e0e0; padding: 40px; }
+        .container { max-width: 850px; margin: auto; background: #2a2a3d; padding: 30px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        h1 { color: #3498db; text-align: center; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
+        .componente { background: #34495e; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #3498db; }
+        pre { background: #111; color: #57ff57; padding: 20px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem; }
+        .btn-back { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Examen Teórico: Documentación del Conversor</h1>
+
+    <h3>1. Descripción General</h3>
+    <p>Este programa en Python permite al usuario convertir números entre los sistemas Binario, Octal, Decimal y Hexadecimal mediante un menú interactivo de selección (1-4).</p>
+
+    <h3>2. Descripción de Componentes (Lo que pide el examen)</h3>
+    
+    <div class="componente">
+        <strong>Variables y Diccionarios:</strong> Utilizamos un diccionario llamado <code>bases</code> para mapear las opciones del menú (1, 2, 3, 4) con sus valores reales (2, 8, 10, 16).
+    </div>
+
+    <div class="componente">
+        <strong>Función <code>int(numero, base)</code>:</strong> Es el motor del programa. Convierte cualquier entrada a sistema decimal para usarlo como puente de conversión.
+    </div>
+
+    <div class="componente">
+        <strong>Condicionales (If/Elif):</strong> Permiten que el programa decida qué función de salida usar (<code>bin</code>, <code>oct</code>, <code>hex</code>) según la elección del usuario.
+    </div>
+
+    <h3>3. Código Fuente</h3>
+    <pre>
+    print("--- BIENVENIDO ---")
+    # primero colocamos esto en la terminal = python conversor.py
+    
+    # 1. Pedir el número primero
+    numero = input("Ingresa el número que quieres convertir: ")
+
+    # 2. Menú para la base de ORIGEN
+    print("\n¿En qué sistema está ese número?")
+    print("1. Binario")
+    print("2. Octal")
+    print("3. Decimal")
+    print("4. Hexadecimal")
+    opcion_origen = input("Elige una opción (1-4): ")
+
+    # Diccionario para convertir opciones en bases numéricas
+    bases = {"1": 2, "2": 8, "3": 10, "4": 16}
+    base_actual = bases.get(opcion_origen)
+
+    # 3. Menú para la base de DESTINO
+    print("\n¿A qué sistema lo quieres convertir?")
+    print("1. Binario")
+    print("2. Octal")
+    print("3. Decimal")
+    print("4. Hexadecimal")
+    opcion_destino = input("Elige una opción (1-4): ")
+    base_deseada = bases.get(opcion_destino)
+
+    if not base_actual or not base_deseada:
+        print("❌ Opción no válida.")
+        return
+
+    try:
+        # Lógica de conversión (el puente decimal)
+        decimal = int(numero, base_actual)
+
+        if base_deseada == 2:
+            resultado = bin(decimal)[2:]
+        elif base_deseada == 8:
+            resultado = oct(decimal)[2:]
+        elif base_deseada == 16:
+            resultado = hex(decimal)[2:].upper()
+        else:
+            resultado = str(decimal)
+
+        print(f"\n✅ El número {numero} convertido es: {resultado}")
+
+    except ValueError:
+        print("\n❌ Error: El número no coincide con el sistema de origen seleccionado.")
+
+    ejecutar_conversor()
+    </pre>
+
+    <h3>4. Captura de Funcionamiento</h3>
+    <p>A continuación se muestra la evidencia del programa ejecutándose en la terminal:</p>
+    <img src="evidencia_examen.png" alt="Captura de pantalla del programa" style="width:100%; border-radius:10px;">
+
+    <a href="index.html" class="btn-back">← Volver al Portafolio</a>
+</div>
+
+</body>
+</html>
