@@ -10,6 +10,12 @@
         .componente { background: #34495e; padding: 15px; border-radius: 8px; margin: 15px 0; border-left: 5px solid #3498db; }
         pre { background: #111; color: #57ff57; padding: 20px; border-radius: 10px; overflow-x: auto; font-size: 0.9rem; }
         .btn-back { display: inline-block; margin-top: 20px; color: #3498db; text-decoration: none; font-weight: bold; }
+        .material-item { background: #34495e; padding: 10px; margin: 5px 0; border-radius: 5px; list-style: none; border-left: 3px solid #3498db; }
+        table { width:100%; border-collapse: collapse; margin: 20px 0; background: #34495e; border-radius: 8px; overflow: hidden; }
+        th { background: #3498db; color: white; padding: 12px; text-align: left; }
+        td { padding: 12px; border-bottom: 1px solid #2a2a3d; }
+        .sistema-info { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 10px; }
+        .sistema-card { background: #242435; padding: 10px; border-radius: 5px; border: 1px solid #3498db; }
     </style>
 </head>
 <body>
@@ -20,23 +26,46 @@
     <h3>1. Descripción General</h3>
     <p>Este programa en Python permite al usuario convertir números entre los sistemas Binario, Octal, Decimal y Hexadecimal mediante un menú interactivo de selección (1-4).</p>
 
-    <h3>2. Descripción de Componentes (Lo que pide el examen)</h3>
+    <h3>2. Sistemas Numéricos Incluidos</h3>
+    <div class="sistema-info">
+        <div class="sistema-card">
+            <strong>🔢 Decimal (Base 10):</strong> El sistema estándar que usamos a diario (0-9).
+        </div>
+        <div class="sistema-card">
+            <strong>🤖 Binario (Base 2):</strong> El lenguaje de las computadoras, usa solo 0 y 1.
+        </div>
+        <div class="sistema-card">
+            <strong>🐙 Octal (Base 8):</strong> Sistema que utiliza ocho dígitos (0-7).
+        </div>
+        <div class="sistema-card">
+            <strong>💎 Hexadecimal (Base 16):</strong> Usa dígitos del 0-9 y letras de la A-F.
+        </div>
+    </div>
+
     
+
+    <h3>3. Objetivos del Proyecto</h3>
+    <ul>
+        <li class="material-item">🎯 <b>Objetivo General:</b> Automatizar la conversión entre bases numéricas.</li>
+        <li class="material-item">🧠 <b>Objetivo Técnico:</b> Implementar lógica de programación y manejo de errores.</li>
+    </ul>
+
+    <h3>4. Lista de Materiales</h3>
+    <table>
+        <tr><th>Herramienta</th><th>Uso</th></tr>
+        <tr><td>🐍 Python 3.x</td><td>Lógica y ejecución del algoritmo.</td></tr>
+        <tr><td>💻 VS Code</td><td>Desarrollo del código fuente.</td></tr>
+    </table>
+
+    <h3>5. Descripción de Componentes Técnicos</h3>
     <div class="componente">
-        <strong>Variables y Diccionarios:</strong> Utilizamos un diccionario llamado <code>bases</code> para mapear las opciones del menú (1, 2, 3, 4) con sus valores reales (2, 8, 10, 16).
+        <strong>Funciones de Conversión:</strong> Se utilizaron <code>bin()</code>, <code>oct()</code> y <code>hex()</code> para transformar los datos procesados.
     </div>
 
-    <div class="componente">
-        <strong>Función <code>int(numero, base)</code>:</strong> Es el motor del programa. Convierte cualquier entrada a sistema decimal para usarlo como puente de conversión.
-    </div>
-
-    <div class="componente">
-        <strong>Condicionales (If/Elif):</strong> Permiten que el programa decida qué función de salida usar (<code>bin</code>, <code>oct</code>, <code>hex</code>) según la elección del usuario.
-    </div>
-
-    <h3>3. Código Fuente</h3>
+    <h3>6. Código Fuente</h3>
     <pre>
-    print("--- BIENVENIDO ---")
+    
+    print("--- 🧮 BIENVENIDO AL CONVERSOR AMIGABLE ---")
     # primero colocamos esto en la terminal = python conversor.py
     
     # 1. Pedir el número primero
@@ -85,12 +114,11 @@
     except ValueError:
         print("\n❌ Error: El número no coincide con el sistema de origen seleccionado.")
 
-    ejecutar_conversor()
+ejecutar_conversor()
     </pre>
 
-    <h3>4. Captura de Funcionamiento</h3>
-    <p>A continuación se muestra la evidencia del programa ejecutándose en la terminal:</p>
-    <img src="evidencia_examen.png" alt="Captura de pantalla del programa" style="width:100%; border-radius:10px;">
+    <h3>7. Evidencia de Funcionamiento</h3>
+    <img src="evidencia_examen.png" alt="Captura de terminal" style="width:100%; border-radius:10px; margin-top: 10px;">
 
     <a href="index.html" class="btn-back">← Volver al Portafolio</a>
 </div>
